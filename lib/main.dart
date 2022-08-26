@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shopapp/Routes/Approute.dart';
+import 'package:shopapp/view/Screen/auth/loginscreen.dart';
+import 'package:shopapp/view/Screen/auth/signupscreen.dart';
 import 'package:shopapp/view/Screen/welcomescreen.dart';
 
 void main() {
@@ -17,11 +20,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const WelcomScreen(),
-      initialRoute: '/welcomescreen',
-      getPages: [
-        GetPage(name: '/welcomescreen', page: () => const WelcomScreen()),
-      ],
+      // home: const WelcomScreen(),
+      initialRoute: Approute.welcome,
+      getPages: Approute.routes,
     );
   }
 }

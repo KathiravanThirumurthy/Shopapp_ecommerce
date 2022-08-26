@@ -1,7 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shopapp/view/Screen/auth/loginscreen.dart';
 import 'package:shopapp/view/Widget/Text_Utils.dart';
+
+import '../../Routes/Routes.dart';
 
 class WelcomScreen extends StatelessWidget {
   const WelcomScreen({Key? key}) : super(key: key);
@@ -46,11 +50,11 @@ class WelcomScreen extends StatelessWidget {
                   const SizedBox(
                     height: 22,
                   ),
-                  Container(
-                    width: 280,
-                    height: 57,
-                    color: Colors.black.withOpacity(0.4),
-                    child: Center(
+                  Center(
+                    child: Container(
+                      width: 280,
+                      height: 57,
+                      color: Colors.black.withOpacity(0.4),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
@@ -73,19 +77,26 @@ class WelcomScreen extends StatelessWidget {
                   const SizedBox(
                     height: 133,
                   ),
-                  Container(
-                    width: 195,
-                    height: 55,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Color.fromARGB(255, 220, 40, 31),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        "Getstart",
-                        style: TextStyle(color: Colors.white, fontSize: 25),
-                      ),
-                    ),
+                  ElevatedButton(
+                    onPressed: (() {
+                      // Get.to(LoginScreen());
+                      //Get.toNamed(Routes.loginScreen);
+                      Get.offNamed(Routes.loginScreen);
+                    }),
+                    style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(255, 220, 40, 31),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15)),
+                        padding: EdgeInsets.symmetric(
+                          vertical: 12,
+                          horizontal: 40,
+                        )),
+                    child: TextUtils(
+                        text: "Get Start",
+                        fontSize: 25,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        underline: TextDecoration.none),
                   ),
                   const SizedBox(
                     height: 34,
@@ -100,7 +111,9 @@ class WelcomScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           underline: TextDecoration.none),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.offNamed(Routes.signupScreen);
+                        },
                         child: TextUtils(
                             text: "Signup",
                             fontSize: 15,
