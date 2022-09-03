@@ -14,7 +14,7 @@ class Approute {
   static final routes = [
     GetPage(name: Routes.welcomeScreen, page: () => const WelcomScreen()),
     GetPage(name: Routes.loginScreen, page: () => const LoginScreen()),
-    GetPage(name: Routes.signupScreen, page: () => const SignUpScreen()),
+    GetPage(name: Routes.signupScreen, page: () => SignUpScreen()),
     GetPage(name: Routes.settingScreen, page: () => const SettingScreen()),
     GetPage(
         name: Routes.forgetpasswordScreen,
